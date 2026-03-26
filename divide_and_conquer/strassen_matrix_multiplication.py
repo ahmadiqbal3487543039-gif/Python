@@ -68,6 +68,11 @@ def matrix_dimensions(matrix: list) -> tuple[int, int]:
 
 
 def print_matrix(matrix: list) -> None:
+    """
+    Print each row of a matrix on a new line.
+
+    Time Complexity: O(n^2) where n is the matrix dimension.
+    """
     print("\n".join(str(line) for line in matrix))
 
 
@@ -110,6 +115,9 @@ def strassen(matrix1: list, matrix2: list) -> list:
     [[34, 23, 19, 15], [68, 46, 37, 28], [28, 18, 15, 12], [96, 62, 55, 48]]
     >>> strassen([[3,7,5,6,9],[1,5,3,7,8],[1,4,4,5,7]], [[2,4],[5,2],[1,7],[5,5],[7,8]])
     [[139, 163], [121, 134], [100, 121]]
+    Time Complexity: 0(n^2.807) using Strassen's Algorithm,
+    compared to 0(n^3) for standard matrix multiplication.
+    Space Complexity: O(n^2).
     """
     if matrix_dimensions(matrix1)[1] != matrix_dimensions(matrix2)[0]:
         msg = (
